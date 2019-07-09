@@ -3,6 +3,7 @@ var newAry = [];
 
 function flatten(ary){
   for(var t of ary){
+    console.log(t.constructor == Array) //t.constructor、t instanceof Array、Object.prototype.toString.call(t)
     if(!Array.isArray(t)){
       newAry.push(t)
     }else{
