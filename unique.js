@@ -3,18 +3,19 @@
  * */
 
 //全局变量
-let  data= [1, 1, '1',2,3,2,5,67,23,29,5]
+let  data= [1, 1,2,2,3,2,5,67,23,29,5]
 
 /**方法1 双重循环 */
 function unique1(ary){
     var newAry =[];
-    for(var i =0;i<ary.length-1;i++){
+    for(var i =0;i<ary.length;i++){
         for(var j =0,resLen=newAry.length; j<resLen;j++){
-            if(ary[i] === newAry[j]){
+            if(ary[i] == newAry[j]){
                 break;
-            }else if(j === resLen -1){
-                newAry.push(ary[i])
             }
+        }
+        if(j == resLen){
+            newAry.push(ary[i])
         }
     }
     return newAry;
@@ -60,4 +61,4 @@ function attribute(arr) {
 }
 
 
-console.log('reslute:',attribute(data))
+console.log('reslute:',unique1(data))
