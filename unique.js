@@ -37,16 +37,15 @@ function unique3(ary){
 }
 
 /**方法4 sort判断相邻是否相同 */
-function unique4(ary){
+function unique4(ary) {
     var res = [];
     var sortedArray = ary.concat().sort();
     var seen;
-    for (var i = 0, len = sortedArray.length; i < len; i++) {
+    for (var i = 0, len = sortedArray.length; i < len-1; i++) {
         // 如果是第一个元素或者相邻的元素不相同
-        if (!i || seen !== sortedArray[i]) {
-            res.push(sortedArray[i])
+        if(!i || sortedArray[i] !== sortedArray[i+1]){
+            res.push(sortedArray[i+1])
         }
-        seen = sortedArray[i];
     }
     return res;
 }
@@ -60,5 +59,4 @@ function attribute(arr) {
     return newarr;//返回新数组
 }
 
-
-console.log('reslute:',unique1(data))
+console.log('reslute:',unique3(data))
