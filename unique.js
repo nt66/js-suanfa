@@ -10,11 +10,12 @@ function unique1(ary){
     var newAry =[];
     for(var i =0;i<ary.length-1;i++){
         for(var j =0,resLen=newAry.length; j<resLen;j++){
-            if(ary[i] === newAry[j])
+            if(ary[i] === newAry[j]){
                 break;
+            }else if(j === resLen -1){
+                newAry.push(ary[i])
+            }
         }
-        if(j === resLen)
-            newAry.push(ary[i])
     }
     return newAry;
 }
@@ -49,5 +50,14 @@ function unique4(ary){
     return res;
 }
 
+/**方法5 key值去重 */
+function attribute(arr) {
+    var obj = {};//新建空对象
+    var newarr = [];//新建空数组
+    for (var i = 0; i < arr.length; i++) { obj[arr[i]] = null; }//将原数组项作为对象的key进行赋值
+    for (var attr in obj) { newarr.push(parseInt(attr)); }//遍历对象，取出key值添加到新数组
+    return newarr;//返回新数组
+}
 
-console.log('reslute:',unique4(data))
+
+console.log('reslute:',attribute(data))
