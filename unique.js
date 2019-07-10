@@ -33,7 +33,7 @@ function unique2(ary){
 
 /**方法3 es6 set */
 function unique3(ary){
-    return Array.from(new Set(ary))
+    return Array.from(new Set(ary)) //也可以这样 [...(new Set(ary))]
 }
 
 /**方法4 sort判断相邻是否相同 */
@@ -59,4 +59,4 @@ function attribute(arr) {
     return newarr;//返回新数组
 }
 
-console.log('reslute:',unique3(data))
+console.log('reslute:',unique4(data))
