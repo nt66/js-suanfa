@@ -3,7 +3,7 @@
  * */
 const ARR=[3,44,38,5,47,15,36,26,27,2,46,4,19,50,48];
 
-//冒泡排序 相邻元素互换，最小的到最队尾，依次。
+//1冒泡排序 相邻元素互换，最小的到最队尾，依次。
 function bubbleSort(arr) {
   console.time('timeout')
   let len = arr.length;
@@ -20,7 +20,7 @@ function bubbleSort(arr) {
   return arr
 }
 
-//选择排序 每次都选最小的放在列表前面，依次。。。
+//2选择排序 每次都选最小的放在列表前面，依次。。。
 function selectionSort(arr) {
   var len = arr.length;
   var minIndex, temp;
@@ -41,7 +41,7 @@ function selectionSort(arr) {
 }
 
 
-//快速排序
+//3快速排序
 /*方法说明：快速排序
 @param  array 待排序数组*/
 //方法一
@@ -69,7 +69,7 @@ function quickSort(array, left, right) {
 }
 // console.log(quickSort(arr,0,arr.length-1));//[2, 3, 4, 5, 15, 19, 26, 27, 36, 38, 44, 46, 47, 48, 50]
 
-//方法二
+//4方法二
 var quickSort2 = function (arr) {
   // console.time('快速排序耗时');
   if (arr.length <= 1) { return arr; }
