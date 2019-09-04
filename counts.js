@@ -1,17 +1,21 @@
 /**
  * 统计
+ * 统计每个值出现的次数
  */
 const LIST = [1, 2, 3, 3, 3, 3, 5, 4, 5, 6, 6, 7, 8, 333, 4444];
 
 function getWordCnt() {
   let Obj = {}
   for (var item of LIST) {
+    //key的值=key的值+1
     Obj[item] = (Obj[item] + 1) || 1
   }
   return Obj;
 }
 
-// console.log(getWordCnt(LIST))
+console.log(getWordCnt(LIST))
+
+
 
 
 // var s = new Set(['A', 'B', 'C']);

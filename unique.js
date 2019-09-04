@@ -39,7 +39,7 @@ function unique3(ary){
 /**方法4 sort判断相邻是否相同 */
 function unique4(ary) {
     var res = [];
-    var sortedArray = ary.concat().sort();
+    var sortedArray = ary.sort((a,b)=>a-b);
     var seen;
     for (var i = 0, len = sortedArray.length; i < len-1; i++) {
         // 如果是第一个元素或者相邻的元素不相同
@@ -51,7 +51,7 @@ function unique4(ary) {
 }
 
 /**方法5 key值去重 */
-function attribute(arr) {
+function unique5(arr) {
     var obj = {};//新建空对象
     var newarr = [];//新建空数组
     for (var i = 0; i < arr.length; i++) { obj[arr[i]] = null; }//将原数组项作为对象的key进行赋值
@@ -59,4 +59,4 @@ function attribute(arr) {
     return newarr;//返回新数组
 }
 
-console.log('reslute:',unique4(data))
+console.log('reslute:',unique5(data))
