@@ -6,7 +6,7 @@ function getRandomList(n=10){
   let arr = [];
   for (var i = 0; i < n; i++) {
     function fn(){
-      var rn = Math.floor(Math.random()*29)+2;
+      var rn = Math.floor(Math.random()*30)+2;
       if(arr.indexOf(rn)==-1){
         arr.push(rn);
       }else{
