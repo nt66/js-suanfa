@@ -59,4 +59,14 @@ function unique5(arr) {
     return newarr;//返回新数组
 }
 
+/**方法6 key值去重 */
+function unique(ary){
+    let uniqueObj = {}
+    for(let item of ary){
+        // key/value结构
+        uniqueObj[item] = item
+    }
+    return Object.values(uniqueObj)
+}
+
 console.log('reslute:',unique5(data))

@@ -19,6 +19,7 @@ function bubbleSort(arr) {
   console.timeEnd('timeout')
   return arr
 }
+console.log('bubbleSort',bubbleSort(ARR));
 
 //2选择排序 每次都选最小的放在列表前面，依次。。。
 function selectionSort(arr) {
@@ -88,7 +89,6 @@ var quickSort2 = function (arr) {
   // console.timeEnd('快速排序耗时');
   return quickSort2(left).concat([pivot], quickSort2(right));
 };
-
 
 // console.log('result:',quickSort2(ARR)) //[2, 3, 4, 5, 15, 19, 26, 27, 36, 38, 44, 46, 47, 48, 50]
  
