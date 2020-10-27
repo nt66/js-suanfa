@@ -69,20 +69,63 @@
  * 排序
  */
 let arr=[3,44,38,5,47,15,36,26,27,2,46,4,19,50,48];
-// console.log(arr.sort((a,b)=>{return a - b}))
+// // console.log(arr.sort((a,b)=>{return a - b}))
 
-function sort1(arr){
-    for(let i=0;i<arr.length;i++){
-        for(let j=0;j<arr.length-1;j++){
-            if(arr[j]>arr[j+1]){
-                let temp = arr[j]
-                arr[j] = arr[j+1]
-                arr[j+1] = temp
+// function sort1(arr){
+//     for(let i=0;i<arr.length;i++){
+//         for(let j=0;j<arr.length-1;j++){
+//             if(arr[j]>arr[j+1]){
+//                 let temp = arr[j]
+//                 arr[j] = arr[j+1]
+//                 arr[j+1] = temp
+//             }
+//         }
+//     }
+//     return arr
+// }
+
+// console.log(sort1(arr))
+
+function sort2(ary,l,r){
+    if(Array.isArray(ary)){
+        if (l < r) {
+            let target = ary[r]
+            let i = l-1;
+            let temp = null;
+            for(var j = l; j<=r; j++){
+                if(ary[j] <= target){
+                    i++;
+                    temp = ary[i];
+                    ary[i] = ary[j]
+                    ary[j] = temp;
+                }
             }
+            sort2(ary,l,i-1);
+            sort2(ary,i+1,r);
         }
+        return ary;
     }
-    return arr
 }
 
-console.log(sort1(arr))
+console.log(sort2(arr, 0, arr.length-1))
+
+
+function sort2(ary,left,right){
+    if(Array.isArray(ary)){
+        if(left<right){
+            let target = ary[right];
+            let i = left-1;
+            let temp = null;
+            for(let j = left;j<=right;j++){
+                if(ary[j]<=target){
+                    i++;
+                }
+            }
+            sort2(ary,left,i-1);
+            sort2(ar,i+1,right);
+        }
+    }
+}
+
+
 
